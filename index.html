@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jameel's 3D Scene Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.5l7.5 3.5v7.5L12 19l-7.5-3.5V8z"/>
+            </svg>
+            Jameel's 3D Scene Editor
+        </div>
+        <div id="menubar">
+            <!-- Menubar items will be populated by JavaScript -->
+        </div>
+        <div class="dropdown">
+            <select id="environment-selector">
+                <option value="studio">Studio</option>
+                <option value="sunset">Sunset</option>
+                <option value="night">Night</option>
+                <option value="forest">Forest</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <div class="panel-tabs">
+                <div class="panel-tab active">Scene</div>
+            </div>
+            <div class="panel-content active">
+                <div class="Outliner" id="outliner">
+                    <!-- Outliner items will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+        <div class="panel-toggle left-panel-toggle" id="left-panel-toggle">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </div>
+
+        <!-- Viewport Container -->
+        <div class="viewport-container">
+            <!-- Toolbar -->
+            <div class="toolbar" id="toolbar">
+                <!-- Toolbar buttons will be populated by JavaScript -->
+            </div>
+            <!-- Viewport -->
+            <div class="viewport" id="viewport">
+                <!-- Three.js renderer will be attached here -->
+            </div>
+            <!-- Status Bar -->
+            <div class="statusbar" id="statusbar">
+                <!-- Status messages will be populated by JavaScript if needed -->
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <div class="panel-section">
+                <div class="panel-header">Properties</div>
+                <div class="panel-body" id="properties-container">
+                    <!-- Properties will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+        <div class="panel-toggle right-panel-toggle" id="right-panel-toggle">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <!-- Loading Indicator -->
+    <div class="loading" id="loading-indicator" style="display: none;">
+        <div class="spinner"></div>
+        Loading...
+    </div>
+
+    <!-- Help Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">3D Scene Editor Help</div>
+                <div class="modal-close" id="modal-close">×</div>
+            </div>
+            <div class="modal-body">
+                <h3>Navigation</h3>
+                <p>• Rotate: Click and drag to orbit.</p>
+                <p>• Zoom: Scroll to zoom in/out.</p>
+                <p>• Pan: Shift + drag to pan.</p>
+                <h3>Controls</h3>
+                <p>• Objects: Select, center, duplicate, or delete objects.</p>
+                <p>• Shapes: Add Cube, Sphere, Cone, Torus, Knot, Cylinder.</p>
+                <p>• Grid: Switch grid types and adjust settings.</p>
+                <p>• Environment: Choose lighting presets (Studio, Sunset, Night, Forest).</p>
+                <p>• Modes: Switch between Model, Material, and Lighting modes.</p>
+                <p>• Undo/Redo: Revert or reapply actions.</p>
+                <p>• Import/Export: Load .gltf/.glb models or export the scene.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
